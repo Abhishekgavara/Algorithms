@@ -1,0 +1,32 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class InsertionSort {
+    void Sort(int a[]){
+        
+        int n=a.length;
+        
+        for(int i=1;i<n;i++){
+           int value=a[i];
+            
+                int j=i;
+                    while(j>0 && value<a[j-1]){
+                            j--;
+                    }
+                  int  temp=a[j];
+                     a[j]=value;
+                     a[i]=temp;
+                
+            
+        }
+    }
+	public static void main (String[] args) {
+	    int a[]={12,22,3,8,13};
+	    InsertionSort is=new InsertionSort();
+	    is.Sort(a);
+	    for(int k:a)
+	    System.out.println(k);
+	   
+	}
+}
