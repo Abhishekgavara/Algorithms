@@ -1,0 +1,41 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class QuickSort {
+    
+    void QuickSort(int a[],int s,int e){
+        if(s<e){
+        int pi=Partition(a,s,e);
+        QuickSort(a,s,pi-1);
+        QuickSort(a,pi+1,e);
+    }
+    }
+    
+  int  Partition(int a[],int s,int e){
+        
+        int pivot=a[e];
+        int pi=s;
+        for(int i=s;i<e;i++){
+            if(a[i]<=pivot){
+                int temp=a[i];
+                a[i]=a[pi];
+                a[pi]=temp;
+                pi++;
+            }
+        }
+        int temp=a[pi];
+        a[pi]=a[e];
+        a[e]=temp;
+        
+        return pi;
+        
+    }
+	public static void main (String[] args) {
+	    int a[]={9,4,6,3,2,7,8,0};
+	    QuickSort qs=new QuickSort();
+	    qs.QuickSort(a,0,7);
+	    for(int k:a)
+		System.out.println(k);
+	}
+}
