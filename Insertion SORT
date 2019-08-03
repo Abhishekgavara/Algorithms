@@ -12,11 +12,10 @@ class InsertionSort {
             
                 int j=i;
                     while(j>0 && value<a[j-1]){
+		    a[j]=a[j-1];
                             j--;
                     }
-                  int  temp=a[j];
                      a[j]=value;
-                     a[i]=temp;
                 
             
         }
